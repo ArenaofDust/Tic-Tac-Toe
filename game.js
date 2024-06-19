@@ -30,7 +30,7 @@ let currPlayer = playerOne;
 
 const displayBoard = () => {
     const board = boardObject.getBoard();
-    boardGrid.innerHtml= "";
+    boardGrid.innerHtml = "";
     gameInfo.textContent = `Player ${currPlayer.letter}'s Turn!`;
 
     for (let i = 0; i < board.length; i++) {
