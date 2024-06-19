@@ -3,7 +3,7 @@ const gameBoard = () => {
     const getBoard = () => board;
     const setBoard = (newBoard) => {
         board = newBoard;
-    }
+    };
 
     const resetBoard = () => {
         board = ["", "", "", "", "", "", "", "", ""];
@@ -30,7 +30,7 @@ let currPlayer = playerOne;
 
 const displayBoard = () => {
     const board = boardObject.getBoard();
-    boardGrid.innerHtml = "";
+    boardGrid.innerHTML = "";
     gameInfo.textContent = `Player ${currPlayer.letter}'s Turn!`;
 
     for (let i = 0; i < board.length; i++) {
@@ -49,7 +49,7 @@ const displayBoard = () => {
 };
 
 const handleCellClick = (index) => {
-    if(gameOver) return;
+    if(gameOver) {return};
 
     const board = boardObject.getBoard();
 
