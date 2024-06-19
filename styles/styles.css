@@ -78,6 +78,7 @@ header {
     font-size: 150px;
     color: #fff;
     position: relative;
+    background-color: wheat;
 }
 
 .cell:hover {
