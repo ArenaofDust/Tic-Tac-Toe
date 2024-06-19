@@ -61,6 +61,19 @@ const handleCellClick = (index) => {
         //Update interface with new board
         displayBoard();
 
+        // Check if the current player has won or if it's a draw.
+        if (checkWin(currPlayer.letter)) {
+            gameInfo.textContent = `Player ${currPlayer.letter} wins!`;
+            gameOver = true;
+        }
+        else if (checkDraw()) {
+            gameInfo.textContent = `Draw!`;
+            gameOver = true;
+        }
+        else {
+            currPlayer = currPlayer === playerOne ? playerTwo : playerOne;
+            displayBoard();
+        }
     }
 };
 
@@ -94,6 +107,16 @@ const checkWin = (letter) => {
     }
     return false; //No winning combo found
 };
+
+const checkDraw = () => {
+    const board = boardObject.getBoard();
+
+    if(!board.includes("")) {
+        return true;
+    }
+    return false;
+}
+
 restartButton.addEventListener("click", () => {
     boardObject.resetBoard();
     gameOver = false;
@@ -101,6 +124,7 @@ restartButton.addEventListener("click", () => {
     displayBoard();
 
 });
+
 
 displayBoard();
 
