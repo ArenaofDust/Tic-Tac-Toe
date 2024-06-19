@@ -2,3 +2,31 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem;
+    color: white
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white
+}
+
+.board-container > .player-info {
+    
+}
+
+
+
+
+
+
