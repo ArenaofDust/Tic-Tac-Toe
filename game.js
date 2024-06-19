@@ -43,6 +43,7 @@ const displayBoard = () => {
 
         // Display the player's letter if the cell is not empty.
         cell.textContent = board[i];
+
         boardGrid.append(cell);
     }
 };
@@ -50,7 +51,7 @@ const displayBoard = () => {
 const handleCellClick = (index) => {
     if(gameOver) return;
 
-    const board = boardObject.getBoard;
+    const board = boardObject.getBoard();
 
     //Checking if the cell is empty
     if(board[index] === "") {
@@ -78,7 +79,7 @@ const handleCellClick = (index) => {
 };
 
 const checkWin = (letter) => {
-    const board = boardObject.getBoard;
+    const board = boardObject.getBoard();
 
     const winCombos = [
         [0, 1, 2],
@@ -96,7 +97,7 @@ const checkWin = (letter) => {
         const [cellOne, cellTwo, cellThree] = combo;
 
         if(board[cellOne] === letter && board[cellTwo] === letter && board[cellThree] === letter) {
-            const winningCells = document.querySelectorAll(`grid-num=${cellOne}, grid-num=${cellTwo}, grid-num=${cellThree}`);
+            const winningCells = document.querySelectorAll(`[grid-num="${cellOne}"], [grid-num="${cellTwo}"], [grid-num="${cellThree}"]`);
             console.log(winningCells);
             winningCells.forEach((cell) => {
                 cell.classList.add("winning-cell");
